@@ -1,0 +1,33 @@
+name: SoulsPlugin
+version: 1.0
+main: com.g2806.Souls.Souls
+api-version: 1.21
+author: Gabrieli2806
+description: A Minecraft plugin where players lose souls on death, gain powers with more souls, and can enter spectator mode as ghosts
+website: https://www.fiverr.com/gabriel2806
+commands:
+  souls:
+    description: Check your soul count
+    usage: /souls
+  givesoul:
+    description: Give a soul to another player
+    usage: /givesoul <player>
+  revive:
+    description: Revive a ghost player by giving them a soul
+    usage: /revive <player>
+  soulsinfo:
+    description: Display information about the souls plugin and available perks
+    usage: /soulsinfo
+  addsoul:
+    description: Add souls to a player (OP only)
+    usage: /addsoul <player> <amount>
+    permission: bukkit.command.op
+  removesoul:
+    description: Remove souls from a player (OP only)
+    usage: /removesoul <player> <amount>
+    permission: bukkit.command.op
+  forcerevive:
+    description: Force revive a ghost player without costing souls (OP only)
+    usage: /forcerevive <player>
+    permission: bukkit.command.op
+

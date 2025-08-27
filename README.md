@@ -22,6 +22,9 @@ Players start with 3 souls and lose 1 soul each time they die. When you reach 0 
 - **20 souls:** Strength I
 - **25 souls:** Regeneration I
 - **30 souls:** Flight Ability
+- **35 souls:** Damage Resistance I
+- **45 souls:** Fire Resistance
+- **50 souls:** Haste II
 
 ## Commands
 

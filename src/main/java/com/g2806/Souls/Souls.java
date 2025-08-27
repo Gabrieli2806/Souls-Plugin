@@ -223,6 +223,9 @@ public class Souls extends JavaPlugin implements Listener {
             player.removePotionEffect(PotionEffectType.NIGHT_VISION);
             player.removePotionEffect(PotionEffectType.STRENGTH);
             player.removePotionEffect(PotionEffectType.REGENERATION);
+            player.removePotionEffect(PotionEffectType.RESISTANCE);
+            player.removePotionEffect(PotionEffectType.FIRE_RESISTANCE);
+            player.removePotionEffect(PotionEffectType.HASTE);
             
             if (souls >= 5) {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 300, 0, true, false));
@@ -249,6 +252,15 @@ public class Souls extends JavaPlugin implements Listener {
                     player.setAllowFlight(false);
                     player.setFlying(false);
                 }
+            }
+            if (souls >= 35) {
+                player.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, 300, 0, true, false));
+            }
+            if (souls >= 45) {
+                player.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 300, 0, true, false));
+            }
+            if (souls >= 50) {
+                player.addPotionEffect(new PotionEffect(PotionEffectType.HASTE, 300, 1, true, false));
             }
         }
     }
@@ -378,6 +390,9 @@ public class Souls extends JavaPlugin implements Listener {
             sender.sendMessage(ChatColor.GREEN + "20 souls: " + ChatColor.WHITE + "Strength I");
             sender.sendMessage(ChatColor.GREEN + "25 souls: " + ChatColor.WHITE + "Regeneration I");
             sender.sendMessage(ChatColor.GREEN + "30 souls: " + ChatColor.WHITE + "Flight Ability");
+            sender.sendMessage(ChatColor.GREEN + "35 souls: " + ChatColor.WHITE + "Damage Resistance I");
+            sender.sendMessage(ChatColor.GREEN + "45 souls: " + ChatColor.WHITE + "Fire Resistance");
+            sender.sendMessage(ChatColor.GREEN + "50 souls: " + ChatColor.WHITE + "Haste II");
             sender.sendMessage("");
             sender.sendMessage(ChatColor.RED + "Death System:");
             sender.sendMessage(ChatColor.WHITE + "• Lose 1 soul on death");
