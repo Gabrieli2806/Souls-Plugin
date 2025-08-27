@@ -1,165 +1,33 @@
-name: Magic
+name: SoulsPlugin
 version: 1.0
-main: com.g2806.Magic.Magic
+main: com.g2806.Souls.Souls
 api-version: 1.21
 author: Gabrieli2806
-description: Magic plugin with warrior/tank class skills and progression system
+description: A Minecraft plugin where players lose souls on death, gain powers with more souls, and can enter spectator mode as ghosts
 website: https://www.fiverr.com/gabriel2806
-
 commands:
-  # L - Basic skills (learnable by both Basic and Awoken classes)
-  taunt:
-    description: "Mocks enemies around you"
-    usage: "/taunt"
-    permission: magic.basic
-  flameshield:
-    description: "Become resistant to fire for limited time"
-    usage: "/flameshield"
-    permission: magic.basic
-  invuln:
-    description: "Grants total immunity but prevents attacking"
-    usage: "/invuln"
-    permission: magic.basic
-  harmshield:
-    description: "Reduces incoming damage by percentage"
-    usage: "/harmshield"
-    permission: magic.basic
-  bladegrasps:
-    description: "Parry the next physical attack"
-    usage: "/bladegrasps"
-    permission: magic.basic
-  parrymagic:
-    description: "Parry the next magical attack"
-    usage: "/parrymagic"
-    permission: magic.basic
-  headbutt:
-    description: "Headbutt target for damage and stun"
-    usage: "/headbutt [target]"
-    permission: magic.basic
-  toss:
-    description: "Grab and throw your target"
-    usage: "/toss [target]"
-    permission: magic.basic
+  souls:
+    description: Check your soul count
+    usage: /souls
+  givesoul:
+    description: Give a soul to another player
+    usage: /givesoul <player>
+  revive:
+    description: Revive a ghost player by giving them a soul
+    usage: /revive <player>
+  soulsinfo:
+    description: Display information about the souls plugin and available perks
+    usage: /soulsinfo
+  addsoul:
+    description: Add souls to a player (OP only)
+    usage: /addsoul <player> <amount>
+    permission: bukkit.command.op
+  removesoul:
+    description: Remove souls from a player (OP only)
+    usage: /removesoul <player> <amount>
+    permission: bukkit.command.op
+  forcerevive:
+    description: Force revive a ghost player without costing souls (OP only)
+    usage: /forcerevive <player>
+    permission: bukkit.command.op
 
-  # B - Basic class leveling skills (10 skills)
-  forcepull:
-    description: "Deal damage and force target towards you"
-    usage: "/forcepull [target]"
-    permission: magic.basic
-  pulse:
-    description: "Deal damage to all enemies within range"
-    usage: "/pulse"
-    permission: magic.basic
-  stealessence:
-    description: "Steal beneficial effects from target"
-    usage: "/stealessence [target]"
-    permission: magic.basic
-  tremor:
-    description: "Strike ground with powerful tremor"
-    usage: "/tremor"
-    permission: magic.basic
-  undyingwill:
-    description: "Cannot be killed for limited time"
-    usage: "/undyingwill"
-    permission: magic.basic
-  intervene:
-    description: "Mark target for intervention protection"
-    usage: "/intervene <player>"
-    permission: magic.basic
-  earthwall:
-    description: "Create a wall of earth in front of you"
-    usage: "/earthwall"
-    permission: magic.basic
-  provoke:
-    description: "Provoke target for tactical advantage"
-    usage: "/provoke [target]"
-    permission: magic.basic
-  boastfulbellow:
-    description: "Bellow that damages and interrupts casting"
-    usage: "/boastfulbellow [target]"
-    permission: magic.basic
-  barrier:
-    description: "Protective barrier with retaliation"
-    usage: "/barrier"
-    permission: magic.basic
-
-  # A - Awoken class leveling skills (10 skills)
-  reckoning:
-    description: "Reckon all enemies with damage and pull"
-    usage: "/reckoning"
-    permission: magic.awoken
-  voidgrasp:
-    description: "Grasp target with suppressing void energy"
-    usage: "/voidgrasp [target]"
-    permission: magic.awoken
-  dominance:
-    description: "Assert dominance, causing enemies to flee"
-    usage: "/dominance"
-    permission: magic.awoken
-  anchor:
-    description: "Become immovable and pull enemies"
-    usage: "/anchor"
-    permission: magic.awoken
-  shatter:
-    description: "Shatter defenses of all nearby enemies"
-    usage: "/shatter"
-    permission: magic.awoken
-  retribution:
-    description: "Reflect damage back to attackers"
-    usage: "/retribution"
-    permission: magic.awoken
-  vanguard:
-    description: "Inspire allies with protective aura"
-    usage: "/vanguard"
-    permission: magic.awoken
-  execute:
-    description: "Instant kill low health enemies"
-    usage: "/execute [target]"
-    permission: magic.awoken
-  ironwill:
-    description: "Purge negatives and gain immunity"
-    usage: "/ironwill"
-    permission: magic.awoken
-  conqueror:
-    description: "Become an unstoppable conqueror"
-    usage: "/conqueror"
-    permission: magic.awoken
-
-  # AL - Awoken class map-found skills (very powerful)
-  worldshatter:
-    description: "Shatter the world itself with devastating power"
-    usage: "/worldshatter"
-    permission: magic.legendary
-  voidlord:
-    description: "Ascend to Void Lord form"
-    usage: "/voidlord"
-    permission: magic.legendary
-
-  # Admin/Utility commands
-  magic:
-    description: "Main magic command for administration"
-    usage: "/magic <subcommand>"
-    permission: magic.admin
-    aliases: [mg, magicskills]
-
-permissions:
-  magic.basic:
-    description: "Allows use of basic magic skills"
-    default: true
-  magic.awoken:
-    description: "Allows use of awoken class skills"
-    default: false
-  magic.legendary:
-    description: "Allows use of legendary map-found skills"
-    default: false
-  magic.admin:
-    description: "Allows use of magic admin commands"
-    default: op
-  magic.*:
-    description: "Grants all magic permissions"
-    default: op
-    children:
-      magic.basic: true
-      magic.awoken: true
-      magic.legendary: true
-      magic.admin: true

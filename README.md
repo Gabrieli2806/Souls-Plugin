@@ -1,108 +1,49 @@
-# Magic Plugin - Warrior/Tank Class System
+# Souls Plugin
 
-A comprehensive Minecraft plugin that adds warrior and tank class skills with a progression system.
+A Minecraft plugin where players collect souls to gain powerful abilities and survive death.
 
-## Features
+## Overview
 
-### Class System
-- **Basic Class**: Starting class with fundamental skills
-- **Awoken Class**: Advanced class with powerful abilities
-- **Legendary Skills**: Map-found ultra-powerful abilities
+Players start with 3 souls and lose 1 soul each time they die. When you reach 0 souls, you become a ghost (spectator mode) until someone revives you. The more souls you have, the more powerful abilities you unlock.
 
-### Skill Categories
+## How to Get Souls
 
-#### L - Learnable Skills (Both Classes)
-- `taunt` - Mock enemies around you
-- `flameshield` - Fire resistance for limited time
-- `invuln` - Total immunity but prevents attacking
-- `harmshield` - Reduces incoming damage by percentage
-- `bladegrasps` - Parry the next physical attack
-- `parrymagic` - Parry the next magical attack
-- `headbutt` - Damage and stun target
-- `toss` - Grab and throw target
+- Kill other players to steal their soul
+- Pick up dropped soul items when players die
+- Receive souls from other players using `/givesoul`
+- Admins can add souls with `/addsoul`
 
-#### B - Basic Class Progression Skills
-- `forcepull` - Damage and pull target towards you
-- `pulse` - Area damage to all nearby enemies
-- `stealessence` - Steal beneficial effects from target
-- `tremor` - Ground strike with knockback
-- `undyingwill` - Cannot be killed for limited time
-- `intervene` - Protect another player
-- `earthwall` - Create temporary earth barrier
-- `provoke` - Tactical advantage against target
-- `boastfulbellow` - Damage and interrupt casting
-- `barrier` - Protective barrier with retaliation
+## Soul Powers
 
-#### A - Awoken Class Progression Skills
-- `reckoning` - Damage and pull all nearby enemies
-- `voidgrasp` - Suppress target's abilities
-- `dominance` - Fear enemies and increase damage taken
-- `anchor` - Become immovable and pull enemies
-- `shatter` - Break enemy defenses
-- `retribution` - Reflect damage back to attackers
-- `vanguard` - Inspire allies with protective aura
-- `execute` - Instant kill low health enemies
-- `ironwill` - Purge negatives and gain immunity
-- `conqueror` - Ultimate transformation with massive buffs
+- **5 souls:** Speed I
+- **8 souls:** Jump Boost I  
+- **12 souls:** Water Breathing
+- **15 souls:** Night Vision
+- **20 souls:** Strength I
+- **25 souls:** Regeneration I
+- **30 souls:** Flight Ability
 
-#### AL - Legendary Map-Found Skills
-- `worldshatter` - Devastating area destruction
-- `voidlord` - Ascend to Void Lord form
+## Commands
 
-## Admin Commands
+### Player Commands
+- `/souls` - Check your soul count
+- `/givesoul <player>` - Give one of your souls to another player
+- `/revive <player>` - Revive a ghost by giving them one of your souls
+- `/soulsinfo` - Show plugin information and power requirements
 
-- `/magic setclass <player> <basic|awoken>` - Set player's class
-- `/magic setstats <player> <intellect|strength> <value>` - Set player stats
-- `/magic info <player>` - Show player information
-- `/magic reload` - Reload plugin configuration
-
-## Permissions
-
-- `magic.basic` - Use basic skills (default: true)
-- `magic.awoken` - Use awoken class skills (default: false)
-- `magic.legendary` - Use legendary skills (default: false)
-- `magic.admin` - Use admin commands (default: op)
-- `magic.*` - All permissions (default: op)
+### Admin Commands (OP only)
+- `/addsoul <player> <amount>` - Add souls to a player
+- `/removesoul <player> <amount>` - Remove souls from a player
+- `/forcerevive <player>` - Revive a ghost without costing souls
 
 ## Installation
 
-1. Download the plugin JAR file from `build/libs/Magic-Plugin-1.0.jar`
+1. Download the plugin JAR file
 2. Place it in your server's `plugins` folder
 3. Restart your server
-4. Configure the plugin using `/magic` commands or edit `config.yml`
-
-## Configuration
-
-The plugin creates a `config.yml` file with various settings:
-- Cooldown multipliers for skills
-- Damage multipliers
-- Class progression settings
-- PvP settings
-- World restrictions
-- Visual effects settings
-
-## Data Storage
-
-Player data is automatically saved to `playerdata.yml` and includes:
-- Class type (Basic/Awoken)
-- Intellect and Strength stats
-- Known skills
-- Automatically saves every 5 minutes and on player quit
+4. The plugin will create a `playerdata.yml` file to save soul counts
 
 ## Requirements
 
-- Minecraft Server 1.21.5+
-- Java 21+
-- Paper/Spigot server
-
-## Build Instructions
-
-```bash
-./gradlew build
-```
-
-The compiled JAR will be in `build/libs/`
-
-## Support
-
-This plugin is designed for defensive gameplay mechanics and does not include any malicious features.
+- Bukkit/Spigot/Paper server
+- Minecraft 1.21+
